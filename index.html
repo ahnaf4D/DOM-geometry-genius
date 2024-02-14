@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -39,6 +39,7 @@
         <!-- Geometry Calculation Feature -->
         <div class="flex justify-around mt-12 flex-col lg:flex-row">
             <div class="grid grid-cols-1  gap-4 mb-5 lg:grid-cols-3 m-0 ">
+                <!-- Triangle here -->
                 <div class="card  bg-base-100 border-2">
                     <figure class="px-10 pt-10"> <img src="images/triangle.png" alt="Shoes" class="rounded-xl" />
                     </figure>
@@ -46,14 +47,16 @@
                         <h2 class="card-title">Triangle</h2>
                         <p class="mb-5">Area (A) = 0.5 x b * h</p>
                         <div class="flex">
-                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="b">&nbsp; &nbsp;cm &nbsp;
+                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="b" id="base-value">&nbsp;
+                            &nbsp;cm &nbsp;
                             &nbsp;
-                            <input type="text" placeholder="h" class="bg-[#F1F1F1] w-24 h-8 p-2">
+                            <input type="text" placeholder="h" id="height-value" class="bg-[#F1F1F1] w-24 h-8 p-2">
                         </div>
-                        <div class="card-actions"> <button
-                                class="btn text-white mt-5 w-full px-20 bg-[#1090D8]">Calculate</button> </div>
+                        <div class="card-actions"> <button class="btn text-white mt-5 w-full px-20 bg-[#1090D8]"
+                                onclick="triangleCalculation()">Calculate</button> </div>
                     </div>
                 </div>
+                <!-- Rectangle Here -->
                 <div class="card  bg-base-100 border-2">
                     <figure class="px-10 pt-10"> <img src="images/rectangle.png" alt="Shoes" class="rounded-xl" />
                     </figure>
@@ -61,14 +64,16 @@
                         <h2 class="card-title">Rectangle</h2>
                         <p class="mb-5">Area (A) = w x I</p>
                         <div class="flex">
-                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="w">&nbsp; &nbsp;cm &nbsp;
+                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="w" id="width-value">&nbsp;
+                            &nbsp;cm &nbsp;
                             &nbsp;
-                            <input type="text" placeholder="I" class="bg-[#F1F1F1] w-24 h-8 p-2">
+                            <input type="text" placeholder="I" class="bg-[#F1F1F1] w-24 h-8 p-2" id="length-value">
                         </div>
-                        <div class="card-actions"> <button
-                                class="btn text-white mt-5 w-full px-20 bg-[#1090D8]">Calculate</button> </div>
+                        <div class="card-actions"> <button class="btn text-white mt-5 w-full px-20 bg-[#1090D8]"
+                                onclick="rectangleCalculation()">Calculate</button> </div>
                     </div>
                 </div>
+                <!-- Parallelogram -->
                 <div class="card  bg-base-100 border-2">
                     <figure class="px-10 pt-10"> <img src="images/parallelogram.png" alt="Shoes" class="rounded-xl" />
                     </figure>
@@ -76,12 +81,14 @@
                         <h2 class="card-title">Parallelogram</h2>
                         <p class="mb-5">Area (A) = b x h</p>
                         <div class="flex">
-                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="b">&nbsp; &nbsp;cm &nbsp;
+                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="b"
+                                id="base-value-parallelogram">&nbsp; &nbsp;cm &nbsp;
                             &nbsp;
-                            <input type="text" placeholder="h" class="bg-[#F1F1F1] w-24 h-8 p-2">
+                            <input type="text" placeholder="h" class="bg-[#F1F1F1] w-24 h-8 p-2"
+                                id="height-value-parallelogram">
                         </div>
-                        <div class="card-actions"> <button
-                                class="btn text-white mt-5 w-full px-20 bg-[#1090D8]">Calculate</button> </div>
+                        <div class="card-actions"> <button class="btn text-white mt-5 w-full px-20 bg-[#1090D8]"
+                                onclick="parallelogramCalculation()">Calculate</button> </div>
                     </div>
                 </div>
                 <div class="card  bg-base-100 border-2">
@@ -91,12 +98,14 @@
                         <h2 class="card-title">Rhombus</h2>
                         <p class="mb-5">Area (A) = 0.5 x d1 x d2</p>
                         <div class="flex">
-                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="d1">&nbsp; &nbsp;cm &nbsp;
+                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="d1"
+                                id="base-value-rhombus">&nbsp; &nbsp;cm &nbsp;
                             &nbsp;
-                            <input type="text" placeholder="d2" class="bg-[#F1F1F1] w-24 h-8 p-2">
+                            <input type="text" placeholder="d2" class="bg-[#F1F1F1] w-24 h-8 p-2"
+                                id="height-value-rhombus">
                         </div>
-                        <div class="card-actions"> <button
-                                class="btn text-white mt-5 w-full px-20 bg-[#1090D8]">Calculate</button> </div>
+                        <div class="card-actions"> <button class="btn text-white mt-5 w-full px-20 bg-[#1090D8]"
+                                onclick="rhombusCalculation()">Calculate</button> </div>
                     </div>
                 </div>
                 <div class="card  bg-base-100 border-2">
@@ -106,12 +115,13 @@
                         <h2 class="card-title">Pentagon</h2>
                         <p class="mb-5">Area (A) = 0.5 x p x b</p>
                         <div class="flex">
-                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="p">&nbsp; &nbsp;cm &nbsp;
+                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="p"
+                                id="p-value-pentagon">&nbsp; &nbsp;cm &nbsp;
                             &nbsp;
-                            <input type="text" placeholder="b" class="bg-[#F1F1F1] w-24 h-8 p-2">
+                            <input type="text" id="b-value-pentagon" placeholder="b" class="bg-[#F1F1F1] w-24 h-8 p-2">
                         </div>
-                        <div class="card-actions"> <button
-                                class="btn text-white mt-5 w-full px-20 bg-[#1090D8]">Calculate</button> </div>
+                        <div class="card-actions"> <button class="btn text-white mt-5 w-full px-20 bg-[#1090D8]"
+                                onclick="pentagonCalculation()">Calculate</button> </div>
                     </div>
                 </div>
                 <div class="card  bg-base-100 border-2">
@@ -121,20 +131,21 @@
                         <h2 class="card-title">Ellipse</h2>
                         <p class="mb-5">Area (A) = &#x3C0;ab</p>
                         <div class="flex">
-                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="a">&nbsp; &nbsp;cm &nbsp;
+                            <input type="text" class="bg-[#F1F1F1] w-24 h-8 p-2" placeholder="a"
+                                id="a-value-ellipse">&nbsp; &nbsp;cm &nbsp;
                             &nbsp;
-                            <input type="text" placeholder="b" class="bg-[#F1F1F1] w-24 h-8 p-2">
+                            <input type="text" placeholder="b" class="bg-[#F1F1F1] w-24 h-8 p-2" id="b-value-ellipse">
                         </div>
-                        <div class="card-actions"> <button
-                                class="btn text-white mt-5 w-full px-20 bg-[#1090D8]">Calculate</button> </div>
+                        <div class="card-actions"> <button class="btn text-white mt-5 w-full px-20 bg-[#1090D8]"
+                                onclick="ellipseCalculation()">Calculate</button> </div>
                     </div>
                 </div>
             </div>
             <div class="border-2 rounded-lg py-10 px-20 h-80">
                 <h3 class="text-xl underline decoration-sky-[#111111CC]">Area Calculation</h3>
-                <ol>
+                <ul id="list-container" class="list-decimal">
 
-                </ol>
+                </ul>
             </div>
         </div>
     </main>
